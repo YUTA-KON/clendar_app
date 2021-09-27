@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'new_plan', new_plan_path %>
+
+<%= form_with model: @plan, local:true do |f| %>
+
+    <div><p>Title</p></div>
+    <%= f.text_field :title %>
+
+    <div><p>Opinion</p></div>
+    <%= f.text_area :body, rows:"3"%>
+
+    <div><p>開始時刻</p></div>
+    <%= f.datetime_select :start_time %>
+
+    <div><p>終了時刻</p></div>
+    <%= f.datetime_select :finish_time %>
+
+     <%= f.submit 'Create Book', class:"btn btn-lg btn-block btn-info mt-4" %>
+<% end %>
+
+<h2>繰り返しイベント</h2>
+
+<%= form_with model: @plan, local:true do |fr| %>
+
+    <div><p>Title</p></div>
+    <%= fr.text_field :title %>
+
+    <div><p>start</p></div>
+    <%= fr.text_field :start_time_dow %>
+
+    <div><p>finish</p></div>
+    <%= fr.text_field :finish_time_dow %>
+
+    <div><p>Opinion</p></div>
+    <%= fr.text_area :body, rows:"3"%>
+
+    <div><p>繰り返し？</p></div>
+    <%= fr.select :ifrepeat, [["いいえ", 0], ["はい", 1]] %>
+
+    <div><p>繰り返しの曜日</p></div>
+    <%= fr.select :dow, [["日", '0'], ["月", '1'], ["火", '2'], ["水", '3'], ["木", '4'], ["金", '5'], ["土", '6']] %>
+
+    <%= fr.submit 'Create Book', class:"btn btn-lg btn-block btn-info mt-4" %>
+<% end %>
+
+<%= link_to 'back', plans_path %>
