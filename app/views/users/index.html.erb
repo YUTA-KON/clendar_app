@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'new_group', new_group_path %>
+
+<% @users.each do |user| %>
+    <%= link_to user.name, user_path(user) %>
+<% end %>

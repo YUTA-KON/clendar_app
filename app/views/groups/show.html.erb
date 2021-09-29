@@ -1,0 +1,6 @@
+<%= @group.name %>
+<br>
+<%= link_to 'join this group', join_path(@group) %>
+<% @users.each do |user| %>
+    <%=user.name%>
+<% end %>

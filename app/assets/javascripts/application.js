@@ -18,6 +18,8 @@
 //= require jquery
 //= require moment
 //= require fullcalendar
+//= require popper
+//= require bootstrap-sprockets
 
 $(function () {
     // 画面遷移を検知
