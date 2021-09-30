@@ -136,10 +136,13 @@ $(function () {
     });
 });
 </script>
-<%= @user.name %><br>
-<%= link_to 'new_plan', new_plan_path %>
-
-<div id="calendar"></div>
-<% @plans.each do |plan| %>
-    <%=plan.title%><br>
-<% end %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <%= render 'users/template', user: @user%>
+    <div class="col-md-8 offset-md-1">
+        <% if @user.id == current_user.id %>
+            <div id="calendar"></div>
+        <% end %>
+    </div>
+  </div>
+</div>

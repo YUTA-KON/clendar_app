@@ -1,0 +1,25 @@
+<div class="col-md-3">
+    <h2>ユーザー情報</h2>
+    <div style="display: flex;">
+        <div>
+            <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+        </div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>ニックネーム:</th>
+                        <td><%= user.name%></td>
+                    </tr>
+                    <tr>
+                        <th>自己紹介:</th>
+                        <td><%= user.introduction %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <%if user.id == current_user.id %>
+            <%= link_to "ユーザ設定", edit_user_path(user), class: 'nav-link btn btn-block btn-info' %>
+            <%= link_to '予定の追加', new_plan_path, class: 'nav-link btn btn-block btn-info' %>
+        <% end %>
+    </div>
+</div>
