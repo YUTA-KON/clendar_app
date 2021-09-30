@@ -1,6 +1,6 @@
 json.array!(@plans) do |plan|
   json.extract! plan, :id, :title, :body
-  json.color 'green'
+  json.color plan.user.color
   json.url plan_url(plan, format: :html)
   if plan.ifrepeat == 1
     json.dow [plan.dow]

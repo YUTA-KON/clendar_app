@@ -6,13 +6,17 @@ class GroupsController < ApplicationController
     def show
         @group = Group.find(params[:id])
         @users = @group.users
-        @plans = []
-        @users.each do |user|
-            user_plans = user.plans
-            @plans.concat(user_plans)
-            # user_plans.each do |user_plan|
-            #     @plans.concat(user_plan)
-            # end
+        if current_user.in?(@users)
+            @plans = []
+            @users.each do |user|
+                user_plans = user.plans
+                @plans.concat(user_plans)
+                # user_plans.each do |user_plan|
+                #     @plans.concat(user_plan)
+                # end
+            end
+        else
+            redirect_to groups_path, notice:'このグループに所属していません。'
         end
     end
 
