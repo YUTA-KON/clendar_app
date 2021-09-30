@@ -37,8 +37,10 @@ class PlansController < ApplicationController
 
   def destroy
     @plan = Plan.find(params[:id])
-    @plan.destroy
-    redirect_to plans_path, notice:"successfully deleted"
+    if @plan.user_id == current_user.id
+      @plan.destroy
+    end
+    redirect_to user_path(current_user), notice:"successfully deleted"
   end
 
   private

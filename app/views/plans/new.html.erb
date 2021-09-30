@@ -16,7 +16,7 @@
     <div><p>終了時刻</p></div>
     <%= f.datetime_select :finish_time %>
 
-     <%= f.submit 'Create Book', class:"btn btn-lg btn-block btn-info mt-4" %>
+     <%= f.submit '予定の作成', class:"btn btn-lg btn-block btn-info mt-4" %>
 <% end %>
 
 <h2>繰り返しイベント</h2>
@@ -41,7 +41,7 @@
     <div><p>繰り返しの曜日</p></div>
     <%= fr.select :dow, [["日", '0'], ["月", '1'], ["火", '2'], ["水", '3'], ["木", '4'], ["金", '5'], ["土", '6']] %>
 
-    <%= fr.submit 'Create Book', class:"btn btn-lg btn-block btn-info mt-4" %>
+    <%= fr.submit '予定の作成', class:"btn btn-lg btn-block btn-info mt-4" %>
 <% end %>
 
 <%= link_to 'back', plans_path %>
