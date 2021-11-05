@@ -5,6 +5,9 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
+    if @plan.user_id != current_user.id
+      redirect_to user_path(current_user)
+    end
   end
 
   def new

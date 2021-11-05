@@ -1,7 +1,15 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'new_group', new_group_path %>
-
-<% @groups.each do |group| %>
-    <%= link_to group.name, group_path(group) %>
-<% end %>
+<div>
+    <%= link_to '新規グループ', new_group_path, class:"btn btn-lg btn-block btn-info mt-4" %>
+</div>
+<h1>グループ一覧</h1>
+<div>
+    <table>
+        <% @groups.each do |group| %>
+            <tr>
+                <td><strong><%= group.name %></strong></td>
+                <td><%= link_to "加入する", group_path(group), class: 'btn btn-secondary'%></td>
+            </tr>
+        <% end %>
+    </table>
+</div>

@@ -139,7 +139,7 @@ $(function () {
 <div class="container px-5 px-sm-0">
   <div class="row">
     <%= render 'users/template', user: @user%>
-    <div class="col-md-8 offset-md-1">
+    <div class="col-md">
         <% if @user.id == current_user.id %>
             <div id="calendar"></div>
         <% end %>
