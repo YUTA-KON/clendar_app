@@ -1,8 +1,0 @@
-<h1>新規グループ</h1>
-<%= form_with model: @group, local:true do |f| %>
-    <div class="input-group mb-3 mt-4">
-        <div><p>グループ名</p></div>
-        <%= f.text_field :name%>
-    </div>
-    <%= f.submit 'Create', class:"btn btn-lg btn-block btn-info mt-4" %>
-<% end %>

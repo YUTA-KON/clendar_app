@@ -29,7 +29,7 @@
         <% user.groups.each do |group| %>
             <tr>
                 <td><strong><%= group.name %></strong></td>
-                <td><%= link_to "加入する", group_path(group), class: 'btn btn-secondary'%></td>
+                <td><%= link_to "グループページ", group_path(group), class: 'btn btn-secondary'%></td>
             </tr>
         <% end %>
     </table>

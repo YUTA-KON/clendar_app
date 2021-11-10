@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
     def index
         @groups = Group.all
+        @group = Group.new
     end
 
     def show
@@ -20,15 +21,11 @@ class GroupsController < ApplicationController
         end
     end
 
-    def new
-        @group = Group.new
-    end
-
     def create
         @group = Group.new(group_params)
         if @group.save
             @group.users << current_user
-            redirect_to group_path(@group), notice:'succesfully created group'
+            redirect_to group_path(@group), notice:'グループを作成しました！'
         else
             render :new
         end
@@ -41,7 +38,7 @@ class GroupsController < ApplicationController
     def update
         @group = Group.find(params[:id])
         if @group.update(group_params)
-            redirect_to group_path(@group), notice: 'succressfullu updated'
+            redirect_to group_path(@group), notice: 'アップデート成功！'
         else
             render :edit
         end
@@ -54,9 +51,15 @@ class GroupsController < ApplicationController
     end
 
     def join
-        @group = Group.find(params[:id])
-        current_user.groups << @group
-        redirect_to group_path(@group)
+        gr_temp = Group.new(group_params)
+        @group = Group.find_by(name: gr_temp.name)
+        # if @group&.authenticate(params[:password])
+        if @group.password == gr_temp.password
+            current_user.groups << @group
+            redirect_to group_path(@group), notice: '加入しました！'
+        else
+            redirect_to groups_path, notice: '加入に失敗しました。'
+        end
     end
 
     def withdrawal
@@ -64,6 +67,6 @@ class GroupsController < ApplicationController
 
     private
     def group_params
-        params.require(:group).permit(:name, users_ids: [])
+        params.require(:group).permit(:password, :name, users_ids: [])
     end
 end
