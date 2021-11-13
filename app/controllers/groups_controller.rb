@@ -1,4 +1,12 @@
 class GroupsController < ApplicationController
+    def create_group_plan
+        @grplan = Grplan.new(plan_params)
+        if @grplan.save
+            redirect_to user_path(current_user), notice:'グループイベントを作成しました。'
+        else
+            redirect_to user_path(current_user), notice:'作成に失敗しました' 
+        end
+    end
     def index
         @groups = Group.all
         @group = Group.new
@@ -7,15 +15,17 @@ class GroupsController < ApplicationController
     def show
         @group = Group.find(params[:id])
         @users = @group.users
+        @grplan = Grplan.new
+        $group_id = @group.id
+        # @grplan.group_id = @group.id
         if current_user.in?(@users)
             @plans = []
             @users.each do |user|
                 user_plans = user.plans
                 @plans.concat(user_plans)
-                # user_plans.each do |user_plan|
-                #     @plans.concat(user_plan)
-                # end
             end
+            @grplans = @group.grplans
+            # @plans.concat(@group.grplans)
         else
             redirect_to groups_path, notice:'このグループに所属していません。'
         end

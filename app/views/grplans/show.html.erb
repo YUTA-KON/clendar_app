@@ -1,0 +1,54 @@
+<div class="row">
+
+    <div class="col-md-8 offset-md-1">
+      <h2>予定の詳細</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th>タイトル</th>
+            <th>メモ</th>
+            <th>開始時間</th>
+            <th>終了時間</th>
+            <%if @plan.ifrepeat %>
+                <th>繰り返し間隔</th>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><%=@plan.title%></td>
+          <td><%=@plan.body%></td>
+          <%if @plan.ifrepeat%>
+            <td><%=@plan.start_time_dow%></td>
+            <td><%=@plan.finish_time_dow%></td>
+            <%if @plan.dow == '0' %>
+                <td>毎週日曜日</td>
+            <% elsif @plan.dow == '1' %>
+                <td>毎週月曜日</td>
+            <% elsif @plan.dow == '2' %>
+                <td>毎週火曜日</td>
+            <% elsif @plan.dow == '3' %>
+                <td>毎週水曜日</td>
+            <% elsif @plan.dow == '4' %>
+                <td>毎週木曜日</td>
+            <% elsif @plan.dow == '5' %>
+                <td>毎週金曜日</td>
+            <% elsif @plan.dow == '6' %>
+                <td>毎週土曜日</td>
+            <% end %>
+          <% else %>
+            <td><%=@plan.start_time%></td>
+            <td><%=@plan.finish_time%></td>
+          <% end %>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><%= link_to "予定の編集", edit_grplan_path(@plan), class:"btn btn-lg btn-block btn-info mt-4" %></td>
+            <td><%= link_to "予定の削除", grplan_path(@plan), method: :delete, class:"btn btn-lg btn-block btn-info mt-4" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

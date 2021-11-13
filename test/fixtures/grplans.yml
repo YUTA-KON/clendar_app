@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  title: MyString
+  body: MyText
+  start_time: 2021-11-13 12:53:19
+  finish_time: 2021-11-13 12:53:19
+  ifrepeat: 1
+  dow: MyString
+  start_time_dow: MyString
+  string: MyString
+  finish_time_dow: MyString
+  string: MyString
+
+two:
+  user_id: 1
+  title: MyString
+  body: MyText
+  start_time: 2021-11-13 12:53:19
+  finish_time: 2021-11-13 12:53:19
+  ifrepeat: 1
+  dow: MyString
+  start_time_dow: MyString
+  string: MyString
+  finish_time_dow: MyString
+  string: MyString
