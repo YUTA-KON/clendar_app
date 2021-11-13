@@ -16,7 +16,9 @@
 //= require_tree .
 //
 //= require jquery
+//= require jquery-ui
 //= require moment
 //= require fullcalendar
 //= require popper
 //= require bootstrap-sprockets
+//= require tempusdominus-bootstrap-4.js

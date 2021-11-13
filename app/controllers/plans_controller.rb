@@ -18,10 +18,10 @@ class PlansController < ApplicationController
     @plan = Plan.new(plan_params)
     @plan.user_id = current_user.id
     if @plan.save
-      redirect_to plans_path
+      redirect_to user_path(current_user)
     else
       @plans = Plan.all
-      render :index
+      render :new
     end
   end
 
