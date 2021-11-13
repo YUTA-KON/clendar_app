@@ -134,10 +134,30 @@ $(function () {
     });
 });
 </script>
-<%= @group.name %>
-<br>
-<%= link_to 'join this group', join_path(@group) %>
-<% @users.each do |user| %>
-    <%=user.name%>
-<% end %>
-<div id='calendar'></div>
+<div class="container px-5 px-sm-0">
+    <div class="row">
+        <div class="col">
+            <table class="table border">
+                <tbody>
+                    <tr>
+                        <th class="border col-2">グループ名</th>
+                        <td><%= @group.name %></td>
+                        <% @users.each do |user| %>
+                            <td></td>
+                        <% end %>
+                    </tr>
+                    <tr>
+                        <th class="border col-2">メンバー</th>
+                        <% @users.each do |user| %>
+                            <td><%=user.name%></td>
+                        <% end %>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div id='calendar'></div>
+    </div>
+</div>
+

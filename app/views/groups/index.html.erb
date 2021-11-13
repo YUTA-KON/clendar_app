@@ -14,7 +14,7 @@
     <% gr_temp=Group.new %>
     <%= form_with model: gr_temp, url: join_path, local: true do |f| %>
         <%= f.text_field :name, placeholder: "グループ名"%><br>
-        <%= f.text_field :password, placeholder: "パスワードを入力" %><br>
+        <%= f.password_field :password, placeholder: "パスワードを入力" %><br>
         <%= f.submit "加入する", class: 'btn btn-secondary'%>
     <% end %>
 </div>

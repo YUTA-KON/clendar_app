@@ -1,7 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'new_group', new_group_path %>
-
-<% @users.each do |user| %>
-    <%= link_to user.name, user_path(user) %>
-<% end %>
+<div class="container px-5 px-sm-0">
+    <div class="row">
+        <div class="col">
+            <table class="table border">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>ユーザー名</th>
+                        <th>自己紹介</th>
+                    </tr>
+                    <% @users.each do |user| %>
+                        <tr>
+                            <td><%= attachment_image_tag user, :profile_image, size:"100x100", fallback: "no_image.jpg" %></td>
+                            <td><%= link_to user.name, user_path(user) %></td>
+                            <td><%=user.introduction%></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
