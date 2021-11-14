@@ -5,7 +5,7 @@ json.array!(@plans) do |plan|
   if plan.ifrepeat == 1
     json.dow [plan.dow]
     json.start plan.start_time_dow
-    json.endTime plan.start_time_dow
+    json.end plan.finish_time_dow
     json.title plan.title + '(定期)'
   else
     json.start plan.start_time
@@ -20,9 +20,10 @@ json.array!(@grplans) do |plan|
   if plan.ifrepeat == 1
     json.dow [plan.dow]
     json.start plan.start_time_dow
-    json.endTime plan.start_time_dow
-    json.title plan.title + '(定期)'
+    json.end plan.finish_time_dow
+    json.title '(グループ)' + plan.title + '(定期)'
   else
+    json.title '(グループ)' + plan.title
     json.start plan.start_time
     json.end plan.finish_time
   end

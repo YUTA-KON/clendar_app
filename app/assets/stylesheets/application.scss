@@ -18,3 +18,17 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "tempusdominus-bootstrap-4.css";
+
+
+
+.fc-day-header { background-color: #f4ffff; }
+.fc-past { background-color: #f1f1f1; }
+.fc-today { background-color: #ffddbb; }
+.fc-future { background-color: #f0ffff; }
+.fc-button { color: black; }
+
+h1, h2, h3, {font-family:Times;}
+
+main {
+    min-height:70vh;
+}

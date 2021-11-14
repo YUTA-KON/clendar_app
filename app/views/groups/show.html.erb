@@ -24,21 +24,23 @@ $(function () {
                 dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
                 //ボタンのレイアウト
                 header: {
-                    left: 'today prev,next',
+                    left: 'prev, today, next',
                     center: 'title',
-                    right: 'month, agendaWeek, agendaDay'
+                    right: 'month, agendaWeek, agendaDay, listMonth'
                 },
+                defaultView: 'agendaWeek',
                 //終了時刻がないイベントの表示間隔
                 defaultTimedEventDuration: '03:00:00',
                 buttonText: {
-                    prev: '前',
-                    next: '次',
+                    prev: '<',
+                    next: '>',
                     prevYear: '前年',
                     nextYear: '翌年',
                     today: '今日',
                     month: '月',
                     week: '週',
-                    day: '日'
+                    day: '日',
+                    list: '予定リスト'
                 },
                 // Drag & Drop & Resize
                 editable: true,
@@ -148,6 +150,9 @@ $(function () {
 </script>
 <div class="container px-5 px-sm-0">
     <div class="row">
+        <%= link_to "このグループから脱退する", group_path(@group), method: :delete, class:"btn btn-warning", style:"margin-left:auto;"%>
+    </div>
+    <div class="row">
         <div class="col">
             <table class="table border">
                 <tbody>
@@ -161,7 +166,10 @@ $(function () {
                     <tr>
                         <th class="border col-2">メンバー</th>
                         <% @users.each do |user| %>
-                            <td><%=user.name%></td>
+                            <td>
+                                <%= attachment_image_tag user, :profile_image, size:"40x40", format: 'jpeg', fallback: "no_image.jpg" %><br>
+                                <%=link_to user.name, user_path(user), style:"color:#{user.color};"%>
+                            </td>
                         <% end %>
                     </tr>
                 </tbody>

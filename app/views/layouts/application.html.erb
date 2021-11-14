@@ -79,10 +79,43 @@
 
     <footer class="bg-info navbar-dark pt-5 pb-4">
       <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <p>test</p>
+        <div class="row">
+          <div class="col">
+            <h4 style="color:#ccc;">サイト情報</h4>
+              <%= link_to root_path, class: 'nav-link text-white' do%>
+                トップページ
+              <% end %>
+              <%= link_to about_path, class: 'nav-link text-white' do%>
+                このサイトについて
+              <% end %>
           </div>
+          <div class="col">
+            <h4 style="color:#ccc;">ユーザー情報</h4>
+            <% if user_signed_in? %>
+                <%= link_to user_path(current_user.id), class: 'nav-link text-white' do%>
+                  マイページ
+                <% end %>
+                <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-white' do%>
+                  ログアウト
+                <% end %>
+            <% else %>
+                <%= link_to new_user_session_path, class: 'nav-link text-white' do%>
+                  マイページ
+                <% end %>
+                <%= link_to root_path, class: 'nav-link text-white' do%>
+                  ログアウト
+                <% end %>
+            <% end %>
+              <%= link_to new_user_registration_path, class: 'nav-link text-white' do%>
+                ユーザー登録
+              <% end %>
+              <%= link_to new_user_session_path, class: 'nav-link text-white' do%>
+                ログイン
+              <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <p style="color:#ccc; margin:0 auto;">This Website was written by KON.</p>
         </div>
       </div>
     </footer>

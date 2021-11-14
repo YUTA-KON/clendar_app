@@ -72,7 +72,10 @@ class GroupsController < ApplicationController
         end
     end
 
-    def withdrawal
+    def destroy
+        @group = Group.find(params[:id])
+        @group.users.delete(current_user)
+        redirect_to user_path(current_user), notice: '脱退しました。'
     end
 
     private

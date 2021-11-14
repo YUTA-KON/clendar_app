@@ -28,8 +28,9 @@ $(function () {
                 header: {
                     left: 'today prev,next',
                     center: 'title',
-                    right: 'month, agendaWeek, agendaDay'
+                    right: 'month, agendaWeek, agendaDay, listMonth'
                 },
+                defaultView: 'agendaWeek',
                 //終了時刻がないイベントの表示間隔
                 defaultTimedEventDuration: '03:00:00',
                 buttonText: {
@@ -40,7 +41,8 @@ $(function () {
                     today: '今日',
                     month: '月',
                     week: '週',
-                    day: '日'
+                    day: '日',
+                    list: '予定リスト'
                 },
                 // Drag & Drop & Resize
                 editable: true,

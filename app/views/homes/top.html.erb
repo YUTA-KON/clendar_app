@@ -1,3 +1,28 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
-<%= link_to "start", groups_path %>
+<div class="container px-sm-0">
+    <div class="row">
+        <%=image_tag "logo.png", style:"width:100%;"%>
+    </div>
+    <div class="row border" style="margin:20px">
+        <div class="col">
+            <h3 style="text-align:center;margin-top:20px;">このサイトについて</h3>
+            <p>
+                本サイトは作者がRuby on Railsに関する技術力の向上を目的として作成したWebアプリケーションです。<br>
+                グループや個人の予定を作成、管理することができます。<br>
+                詳しい使い方などは下のリンクをご確認ください。
+            </p>
+            <%= link_to"このサイトについて", about_path, class:"btn btn-lg btn-block btn-info" %>
+        </div>
+    </div>
+    <div class="row border" style="margin:20px">
+        <div class="col">
+            <h3 style="text-align:center;margin-top:20px;">始め方</h3>
+            <p>
+                下記リンクからユーザー登録ができます。<br>
+                ユーザー登録済みの方は「ログイン」ボタンよりログインして下さい。<br>
+                登録方法については「このサイトについて」をご確認ください。
+            </p>
+            <%= link_to "ユーザー登録", new_user_registration_path, class:"btn btn-lg btn-block btn-info" %>
+            <%= link_to"ログイン", new_user_session_path, class:"btn btn-lg btn-block btn-info" %>
+        </div>
+    </div>
+</div>

@@ -32,7 +32,7 @@ class PlansController < ApplicationController
   def update
     @plan = Plan.find(params[:id])
     if @plan.update(plan_params)
-      redirect_to plans_path, notice:"successfully updated."
+      redirect_to user_path(current_user), notice:"successfully updated."
     else
       render :edit
     end
