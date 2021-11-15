@@ -75,7 +75,7 @@ $(function () {
                         });
                         $.ajax({
                             type: "post",
-                            url: "/plans",
+                            url: "/grplans",
                             data: JSON.stringify({
                                 title: title,
                                 start_time: start.toISOString(),
@@ -100,7 +100,7 @@ $(function () {
                     });
                     $.ajax({
                         type: "patch",
-                        url:"plans/"+info.id,
+                        url:"../grplans/"+info.id,
                         data: JSON.stringify({
                             start_time: info.start.toISOString(),
                             finish_time: info.end.toISOString()
@@ -123,7 +123,7 @@ $(function () {
                     });
                     $.ajax({
                         type: "patch",
-                        url:"plans/"+eventResizeinfo.id,
+                        url:"grplans/"+eventResizeinfo.id,
                         data: JSON.stringify({
                             start_time: eventResizeinfo.start.toISOString(),
                             finish_time: eventResizeinfo.end.toISOString()
