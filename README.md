@@ -33,7 +33,10 @@
 - Datetimepicker
 #### 利用したツール
 - Visual Studio Code
+- AWS EC2
+- AWS RDS
 - GitHub
+
 ## 使い方
 #### 動作環境
 - Mac、PC、タブレットまたはスマートホン
@@ -89,7 +92,7 @@
 
 
 ### デモ
-
+app/assets/images/demo.mp4を確認してください。
 
 
 ## 注意点
