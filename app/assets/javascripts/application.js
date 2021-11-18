@@ -23,5 +23,5 @@
 //= require bootstrap-sprockets
 //= require tempusdominus-bootstrap-4.js
 
-import '@fullcalendar/common/main.css'
-import '@fullcalendar/daygrid/main.css'
+import '@fullcalendar/common/main.css';
+import '@fullcalendar/daygrid/main.css';
