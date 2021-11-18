@@ -74,3 +74,8 @@ gem "refile-mini_magick"
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap4-datetime-picker-rails'
 # gem "font-awesome-rails"
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
