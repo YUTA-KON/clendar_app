@@ -15,7 +15,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //
 //= require moment
 //= require fullcalendar
@@ -25,3 +24,4 @@
 
 import '@fullcalendar/common/main.css';
 import '@fullcalendar/daygrid/main.css';
+//= require_tree .
