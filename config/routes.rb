@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :users
   resources :groups
   resources :grplans, only:[:edit, :update, :create, :show, :destroy]
+  resources :notifications
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
