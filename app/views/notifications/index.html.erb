@@ -1,0 +1,20 @@
+<div class="container px-5 px-sm-0">
+    <div class="row">
+        <div class="col">
+            <table class="table border">
+                <tbody>
+                    <tr>
+                        <th>投稿日</th>
+                        <th>タイトル</th>
+                    </tr>
+                    <% @notifications.each do |notification| %>
+                        <tr>
+                            <td><%= notification.created_at.strftime('%Y/%m/%d') %></td>
+                            <td><%= link_to notification.title, notification_path(notification) %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

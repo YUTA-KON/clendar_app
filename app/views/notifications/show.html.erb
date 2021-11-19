@@ -1,0 +1,17 @@
+<div class="container px-5 px-sm-0">
+    <div class="row border-bottom" style="margin:30px;">
+        <div class="col">
+            <h2 style="text-align:center"><%= @notification.title %></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5" style="margin:0 auto;">
+            <%= @notification.body %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5" style="margin-left: auto;">
+            <%= @notification.created_at.strftime('%Y/%m/%d') %>
+        </div>
+    </div>
+</div>

@@ -40,6 +40,11 @@
                 グループ一覧
               <% end %>
             </li>
+            <li class="nav-item">
+              <%= link_to notifications_path, class: 'nav-link text-white' do%>
+                お知らせ一覧
+              <% end %>
+            </li>
               <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-white' do%>
                 ログアウト
               <% end %>
@@ -53,6 +58,11 @@
             <li class="nav-item">
               <%= link_to about_path, class: 'nav-link text-white' do%>
                 このサイトについて
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to notifications_path, class: 'nav-link text-white' do%>
+                お知らせ一覧
               <% end %>
             </li>
             <li class="nav-item">

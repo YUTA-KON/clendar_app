@@ -13,7 +13,7 @@
             <%= link_to"このサイトについて", about_path, class:"btn btn-lg btn-block btn-info" %>
         </div>
     </div>
-    <div class="row border" style="margin:20px">
+    <div class="row border" style="margin:20px;">
         <div class="col">
             <h3 style="text-align:center;margin-top:20px;">始め方</h3>
             <p>
@@ -23,6 +23,26 @@
             </p>
             <%= link_to "ユーザー登録", new_user_registration_path, class:"btn btn-lg btn-block btn-info" %>
             <%= link_to"ログイン", new_user_session_path, class:"btn btn-lg btn-block btn-info" %>
+        </div>
+    </div>
+    <div class="row border" style="margin:20px">
+        <div class="col">
+            <h3 style="text-align:center;margin-top:20px;">お知らせ(最新5件を取得)</h3>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>投稿日</th>
+                        <th>タイトル</th>
+                    </tr>
+                    <% @notifications.each do |notification| %>
+                        <tr>
+                            <td><%= notification.created_at.strftime('%Y/%m/%d') %></td>
+                            <td><%= link_to notification.title, notification_path(notification) %></td>
+                        </tr>
+                    <% end %>
+                    <tr><td><%=link_to "全てのお知らせを取得", notifications_path %></td></tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
