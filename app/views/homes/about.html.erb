@@ -1,13 +1,4 @@
-
-
 <style type='text/css'>
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1rem; }
 
 .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
@@ -52,15 +43,6 @@ body {
 	}
 }
 
-@media print {
-	html {
-		font-size: 13px;
-	}
-}
-
-/* Typography
--------------------------------------------------------- */
-
 #write>h1:first-child,
 h1 {
 	margin-top: 1.6em;
@@ -96,6 +78,9 @@ h2:after{
     height: 1px;
 }
 
+h4 { font-size: 1.4rem; font-weight:bold;}
+h5 { font-size: 1.2rem; font-weight:bold;}
+
 h1+h2, h2+h3 {
 	margin-top: 0.83em;
 }
@@ -125,14 +110,6 @@ pre {
 	font-size: .9em;
 	background: white;
 }
-.md-fences{
-	margin-left: 1em;
-	padding-left: 1em;
-	border: 1px solid #ddd;
-	padding-bottom: 8px;
-	padding-top: 6px;
-	margin-bottom: 1.5em;
-}
 
 a {
 	color: #2484c1;
@@ -148,19 +125,6 @@ h1 a,
 h1 a:hover {
 	color: #333;
 	text-decoration: none;
-}
-hr {
-	color: #ddd;
-	height: 1px;
-	margin: 2em 0;
-	border-top: solid 1px #ddd;
-	border-bottom: none;
-	border-left: 0;
-	border-right: 0;
-}
-.ty-table-edit {
-	background: #ededed;
-    padding-top: 4px;
 }
 table {
 	margin-bottom: 1.333333rem
@@ -193,57 +157,9 @@ table tbody+tbody {
 .task-list{
 	padding:0;
 }
-
-.md-task-list-item {
-	padding-left: 1.6rem;
-}
-
-.md-task-list-item > input:before {
-	content: '\221A';
-	display: inline-block;
-	width: 1.33333333rem;
-  	height: 1.6rem;
-	vertical-align: middle;
-	text-align: center;
-	color: #ddd;
-	background-color: #fefefe;
-}
-
-.md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before{
-	color: inherit;
-}
 .md-tag {
 	color: inherit;
 	font: inherit;
-}
-#write pre.md-meta-block {
-	min-height: 35px;
-	padding: 0.5em 1em;
-}
-#write pre.md-meta-block {
-	white-space: pre;
-	background: #f8f8f8;
-	border: 0px;
-	color: #999;
-
-	width: 100vw;
-	max-width: calc(100% + 60px);
-	margin-left: -30px;
-	border-left: 30px #f8f8f8 solid;
-	border-right: 30px #f8f8f8 solid;
-
-	margin-bottom: 2em;
-	margin-top: -1.3333333333333rem;
-	padding-top: 26px;
-	padding-bottom: 10px;
-	line-height: 1.8em;
-	font-size: 0.9em;
-	font-size: 0.76em;
-	padding-left: 0;
-}
-.md-img-error.md-image>.md-meta{
-	vertical-align: bottom;
 }
 #write>h5.md-focus:before {
 	top: 2px;
@@ -257,62 +173,6 @@ table tbody+tbody {
 	padding: 0;
 }
 
-.outline-expander:before {
-	color: inherit;
-	font-size: 14px;
-	top: auto;
-	content: "\f0da";
-	font-family: FontAwesome;
-}
-
-.outline-expander:hover:before,
-.outline-item-open>.outline-item>.outline-expander:before {
-  	content: "\f0d7";
-}
-
-/** source code mode */
-#typora-source {
-	font-family: Courier, monospace;
-    color: #6A6A6A;
-}
-
-.html-for-mac #typora-sidebar {
-    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-}
-
-.cm-s-typora-default .cm-header,
-.cm-s-typora-default .cm-property,
-.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
-	color: #428bca;
-}
-
-.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
-	color: #777777;
-}
-
-.typora-node .file-list-item-parent-loc,
-.typora-node .file-list-item-time,
-.typora-node .file-list-item-summary {
-	font-family: arial, sans-serif;
-}
-
-.md-task-list-item>input {
-    margin-left: -1.3em;
-    margin-top: calc(1rem - 12px);
-}
-
-.md-mathjax-midline {
-	background: #fafafa;
-}
-
-.md-fences .code-tooltip {
-	bottom: -2em !important;
-}
-
-.dropdown-menu .divider {
-	border-color: #e5e5e5;
-}
 
  :root {--mermaid-font-zoom:1em ;}  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
 </style>
