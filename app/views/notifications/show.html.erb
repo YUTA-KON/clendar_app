@@ -13,8 +13,10 @@
         <div class="col-md-5" style="margin-left: auto;">
             <%= @notification.created_at.strftime('%Y/%m/%d') %>
         </div>
-        <% if current_user.id == 1 %>
-            <%= link_to "削除", notification_path(@notification), method: :delete %>
+        <% if user_signed_in? %>
+            <% if current_user.id == 1 %>
+                <%= link_to "削除", notification_path(@notification), method: :delete %>
+            <% end %>
         <% end %>
     </div>
 </div>
